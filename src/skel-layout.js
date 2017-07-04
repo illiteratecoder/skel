@@ -1,4 +1,4 @@
-/* skel-layout.js v3.0.1 | (c) skel.io | MIT licensed */
+/* skel-layout.js v3.0.1 | (c) skel.io | MIT licensed| edited by Jeremy Ephron Barenholtz 05-10-2017 */
 
 (function(_) { "use strict"; var __ = {
 
@@ -162,8 +162,9 @@
 								// Determine mode.
 
 									// Responsive level?
-										if (cell.className.match(/important\((.+)\)/) && (l = parseInt(__.gridLevelMap.v[RegExp.$1])) <= config.grid.level)
-											mode = 'l';
+										if(config != null)
+											if (cell.className.match(/important\((.+)\)/) && (l = parseInt(__.gridLevelMap.v[RegExp.$1])) <= config.grid.level)
+												mode = 'l';
 
 								// No valid mode? Bail.
 									if (!mode)
@@ -182,8 +183,6 @@
 											return;
 
 								// Move cell to front.
-									console.log('[skel-layout] important: moving to front of row (' + i + ')');
-
 									parent.insertBefore(
 										cell,
 										parent.firstChild
@@ -209,8 +208,6 @@
 										return;
 
 								// Move cell back to its original location (using our placeholder).
-									console.log('[skel-layout] important: moving back (' + i + ')');
-
 									parent.insertBefore(
 										cell,
 										placeholder.nextSibling
