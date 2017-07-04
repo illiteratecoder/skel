@@ -1,3 +1,11 @@
+# Edits
+
+- Added flexbox grid support without compromising the block Skel layout; includes classes for flexbox ordering.
+- Added bugfix for cell prioritization ("important" class) in skel-layout.js and skel-layout.min.js.
+- Cut down on redundant CSS output when defining containers and rows.
+
+Now, the original Skel Readme:
+
 # Skel
 
 Skel is a lightweight framework for building responsive sites and web apps.
